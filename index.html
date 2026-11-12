@@ -1,0 +1,1139 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11100e">
+  <title>KÖYA LAGOS | Food, Drinks & Grills</title>  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">  <style>
+    :root {
+      --bg: #11100e;
+      --surface: #1b1916;
+      --cream: #f4eee4;
+      --muted: #aaa096;
+      --gold: #c69a5b;
+      --line: rgba(244, 238, 228, .13);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .topbar {
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 15px;
+      background: var(--gold);
+      color: #17120c;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    header {
+      height: 82px;
+      padding: 0 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(17, 16, 14, .96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(15px);
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 31px;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #d4ccc1;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .nav-order {
+      border: 1px solid var(--gold);
+      padding: 12px 19px;
+      color: var(--gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      color: var(--cream);
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 690px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 100px 9%;
+      background:
+        linear-gradient(90deg, rgba(10, 9, 8, .94), rgba(10, 9, 8, .55), rgba(10, 9, 8, .15)),
+        linear-gradient(0deg, rgba(10, 9, 8, .65), transparent 50%),
+        url("https://i.ibb.co/NnpvSdTN/IMG-20261111-WA0040.jpg") center/cover;
+    }
+
+    .hero-content {
+      max-width: 690px;
+      animation: appear 1.2s ease both;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(55px, 9vw, 112px);
+      font-weight: 500;
+      line-height: .98;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hero-description {
+      max-width: 470px;
+      margin-top: 25px;
+      color: #d0c7bb;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 51px;
+      padding: 0 25px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: .3s;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #17120c;
+    }
+
+    .btn-gold:hover {
+      background: #e0b879;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(244, 238, 228, .6);
+      color: var(--cream);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 20px 0;
+      background: #211c16;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .marquee-track {
+      display: inline-block;
+      animation: move 25s linear infinite;
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 17px;
+      letter-spacing: 4px;
+    }
+
+    .marquee-track span {
+      margin: 0 30px;
+    }
+
+    section {
+      padding: 105px 8%;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 55px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 15px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 6vw, 62px);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+      margin-top: 17px;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .food-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      transition: .4s;
+    }
+
+    .food-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(198, 154, 91, .65);
+    }
+
+    .food-card img {
+      height: 265px;
+      transition: transform .6s;
+    }
+
+    .food-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .food-image {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .food-info {
+      padding: 23px;
+    }
+
+    .food-info h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .food-info p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 10px;
+      line-height: 1.7;
+    }
+
+    .category-label {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .drinks-section {
+      background: #191713;
+    }
+
+    .grills-section {
+      background: var(--bg);
+    }
+
+    .category-banner {
+      min-height: 330px;
+      margin-bottom: 35px;
+      display: flex;
+      align-items: flex-end;
+      padding: 35px;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-banner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,.85), rgba(0,0,0,.05));
+    }
+
+    .category-banner div {
+      position: relative;
+      z-index: 1;
+    }
+
+    .category-banner h3 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(35px, 6vw, 58px);
+      font-weight: 500;
+    }
+
+    .category-banner p {
+      color: #e2d8cb;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+
+    .drinks-banner {
+      background-image: url("https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=1600&q=85");
+    }
+
+    .grills-banner {
+      background-image: url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=85");
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+      background: #191713;
+    }
+
+    .feature-image {
+      height: 530px;
+      overflow: hidden;
+    }
+
+    .feature-image img {
+      height: 100%;
+    }
+
+    .feature-content .eyebrow {
+      margin-bottom: 17px;
+    }
+
+    .feature-content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(40px, 5vw, 65px);
+      line-height: 1.1;
+      font-weight: 500;
+    }
+
+    .feature-content p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2;
+      margin: 22px 0 30px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .gallery-grid img {
+      height: 230px;
+      transition: .4s;
+    }
+
+    .gallery-grid img:hover {
+      opacity: .75;
+      transform: scale(.98);
+    }
+
+    .visit {
+      text-align: center;
+      background:
+        linear-gradient(rgba(10, 9, 8, .86), rgba(10, 9, 8, .9)),
+        url("https://i.ibb.co/HQ00xkB/IMG-20261111-WA0045.jpg") center/cover;
+    }
+
+    .visit h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(40px, 7vw, 72px);
+      font-weight: 500;
+    }
+
+    .visit-details {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 55px;
+      margin: 45px 0;
+    }
+
+    .visit-details div {
+      max-width: 250px;
+    }
+
+    .visit-details h3 {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .visit-details p {
+      color: #d1c8bd;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 55px 8% 25px;
+      background: #0c0b0a;
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding-bottom: 35px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .footer-main p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #c5bcb0;
+      font-size: 11px;
+    }
+
+    .copyright {
+      color: #77716a;
+      text-align: center;
+      font-size: 10px;
+      padding-top: 25px;
+      letter-spacing: 1px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      background: #25d366;
+      color: white;
+      border-radius: 50px;
+      padding: 15px 20px;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(0,0,0,.35);
+      transition: .3s;
+    }
+
+    .whatsapp:hover {
+      transform: translateY(-4px);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes move {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      header {
+        padding: 0 5%;
+      }
+
+      nav {
+        gap: 16px;
+      }
+
+      nav a {
+        font-size: 9px;
+      }
+
+      section {
+        padding: 80px 5%;
+      }
+
+      .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature {
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      header {
+        height: 72px;
+      }
+
+      .logo {
+        font-size: 25px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #11100e;
+        padding: 12px 6% 25px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      nav a {
+        padding: 16px 0;
+        font-size: 11px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-order {
+        margin-top: 12px;
+        text-align: center;
+        border: 1px solid var(--gold);
+        padding: 13px;
+      }
+
+      .hero {
+        min-height: 650px;
+        padding: 80px 7%;
+        background-position: 60% center;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .food-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .food-card img {
+        height: 260px;
+      }
+
+      .feature {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .feature-image {
+        height: 350px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid img {
+        height: 170px;
+      }
+
+      .visit-details {
+        gap: 30px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .category-banner {
+        min-height: 260px;
+        padding: 22px;
+      }
+
+      .footer-main {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .whatsapp {
+        right: 14px;
+        bottom: 14px;
+        padding: 13px 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style></head><body>  <div class="topbar">
+    A dining experience worth remembering · KÖYA LAGOS
+  </div>  <header>
+    <a href="#home" class="logo">KÖYA<span>.</span></a><button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+  ☰
+</button>
+
+<nav id="navigation">
+  <a href="#home">Home</a>
+  <a href="#food">Food</a>
+  <a href="#drinks">Drinks</a>
+  <a href="#grills">Grills</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#visit">Visit Us</a>
+  <a class="nav-order" href="https://glovoapp.com/ng/en/island-lagos/koya-lagos-los?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action" target="_blank" rel="noopener">Order Online ↗</a>
+</nav>
+
+  </header>  <main><section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">Welcome to KÖYA Lagos</div>
+    <h1>Good Food.<br><span>Great Moments.</span></h1>
+    <p class="hero-description">
+      Discover memorable dining, delicious dishes, refreshing drinks
+      and satisfying grills in a welcoming atmosphere.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#food" class="btn btn-gold">Explore Our Menu</a>
+      <a href="https://wa.me/2348060874692" class="btn btn-outline" target="_blank" rel="noopener">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>FOOD</span> ✦ <span>DRINKS</span> ✦ <span>GRILLS</span> ✦
+    <span>GOOD TIMES</span> ✦ <span>KÖYA LAGOS</span> ✦
+    <span>FOOD</span> ✦ <span>DRINKS</span> ✦ <span>GRILLS</span> ✦
+    <span>GOOD TIMES</span> ✦ <span>KÖYA LAGOS</span> ✦
+  </div>
+</div>
+
+<!-- FOOD SECTION -->
+<section id="food">
+  <div class="section-heading reveal">
+    <div class="eyebrow">A Taste of KÖYA</div>
+    <h2>Our Signature Food</h2>
+    <p>
+      Explore a selection of dishes photographed at KÖYA.
+      Every image below uses the original pictures you supplied.
+    </p>
+  </div>
+
+  <div class="food-grid">
+
+    <article class="food-card reveal">
+      <div class="food-image">
+        <img src="https://i.ibb.co/B5t2qpTg/IMG-20261111-WA0048.jpg" alt="Seafood okra">
+      </div>
+      <div class="food-info">
+        <span class="category-label">From the Kitchen</span>
+        <h3>Seafood Okra</h3>
+        <p>A delicious seafood-inspired dish.</p>
+      </div>
+    </article>
+
+    <article class="food-card reveal">
+      <div class="food-image">
+        <img src="https://i.ibb.co/HQ00xkB/IMG-20261111-WA0045.jpg" alt="Poultry platter">
+      </div>
+      <div class="food-info">
+        <span class="category-label">Signature Selection</span>
+        <h3>Poultry Platter</h3>
+        <p>A generous platter for food lovers.</p>
+      </div>
+    </article>
+
+    <article class="food-card reveal">
+      <div class="food-image">
+        <img src="https://i.ibb.co/GQP40SFt/IMG-20261111-WA0046.jpg" alt="Carnivore platter">
+      </div>
+      <div class="food-info">
+        <span class="category-label">Signature Selection</span>
+        <h3>Carnivore Platter</h3>
+        <p>A hearty platter made for a satisfying meal.</p>
+      </div>
+    </article>
+
+    <article class="food-card reveal">
+      <div class="food-image">
+        <img src="https://i.ibb.co/0VWc4m9j/IMG-20261111-WA0039.jpg" alt="Spaghetti Ciopinno">
+      </div>
+      <div class="food-info">
+        <span class="category-label">From the Kitchen</span>
+        <h3>Spaghetti Ciopinno</h3>
+        <p>A seafood-inspired pasta selection.</p>
+      </div>
+    </article>
+
+    <article class="food-card reveal">
+      <div class="food-image">
+        <img src="https://i.ibb.co/1JbrWtyQ/IMG-20261111-WA0051.jpg" alt="Asian beef salad">
+      </div>
+      <div class="food-info">
+        <span class="category-label">Fresh Selection</span>
+        <h3>Asian Beef Salad</h3>
+        <p>A fresh and flavourful menu selection.</p>
+      </div>
+    </article>
+
+    <article class="food-card reveal">
+      <div class="food-image">
+        <img src="https://i.ibb.co/TxG7JhzF/IMG-20261111-WA0047.jpg" alt="Paella rice">
+      </div>
+      <div class="food-info">
+        <span class="category-label">From the Kitchen</span>
+        <h3>Paella Rice</h3>
+        <p>A colourful rice dish for a memorable meal.</p>
+      </div>
+    </article>
+
+    <article class="food-card reveal">
+      <div class="food-image">
+        <img src="https://i.ibb.co/nqskcbWB/IMG-20261111-WA0043.jpg" alt="Catfish peppersoup with steamed rice">
+      </div>
+      <div class="food-info">
+        <span class="category-label">Signature Selection</span>
+        <h3>Catfish Peppersoup</h3>
+        <p>Served with steamed rice.</p>
+      </div>
+    </article>
+
+    <article class="food-card reveal">
+      <div class="food-image">
+        <img src="https://i.ibb.co/v4yw1ZDs/IMG-20261111-WA0044.jpg" alt="Seafood platter">
+      </div>
+      <div class="food-info">
+        <span class="category-label">Seafood Selection</span>
+        <h3>Seafood Platter</h3>
+        <p>A seafood selection for sharing and enjoying.</p>
+      </div>
+    </article>
+
+    <article class="food-card reveal">
+      <div class="food-image">
+        <img src="https://i.ibb.co/NnpvSdTN/IMG-20261111-WA0040.jpg" alt="KÖYA platter">
+      </div>
+      <div class="food-info">
+        <span class="category-label">House Selection</span>
+        <h3>KÖYA Platter</h3>
+        <p>A special platter from KÖYA.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- DRINKS SECTION --><section class="drinks-section" id="drinks">  <div class="section-heading reveal">
+    <div class="eyebrow">Refresh & Unwind</div>
+    <h2>Drinks & Refreshments</h2>
+    <p>Explore refreshing drinks and colourful beverages.</p>
+  </div>  <div class="category-banner drinks-banner reveal">
+    <div>
+      <span class="category-label">The Drinks Experience</span>
+      <h3>Refresh Your Moment.</h3>
+      <p>Good company deserves a refreshing drink.</p>
+    </div>
+  </div>  <div class="food-grid"><article class="food-card reveal">
+  <div class="food-image">
+    <img
+      src="https://images.pexels.com/photos/2109099/pexels-photo-2109099.jpeg?auto=compress&cs=tinysrgb&w=900"
+      alt="Colourful refreshing drinks"
+      loading="lazy"
+      onerror="this.onerror=null;this.src='https://placehold.co/900x600/211c16/c69a5b?text=Refreshing+Drinks';">
+  </div>
+  <div class="food-info">
+    <span class="category-label">Drinks</span>
+    <h3>Refreshing Drinks</h3>
+    <p>Refreshing beverages for every occasion.</p>
+  </div>
+</article>
+
+<article class="food-card reveal">
+  <div class="food-image">
+    <img
+      src="https://images.pexels.com/photos/616836/pexels-photo-616836.jpeg?auto=compress&cs=tinysrgb&w=900"
+      alt="Freshly prepared beverage"
+      loading="lazy"
+      onerror="this.onerror=null;this.src='https://placehold.co/900x600/211c16/c69a5b?text=Fresh+Beverages';">
+  </div>
+  <div class="food-info">
+    <span class="category-label">Drinks</span>
+    <h3>Fresh Beverages</h3>
+    <p>A refreshing addition to your dining experience.</p>
+  </div>
+</article>
+
+<article class="food-card reveal">
+  <div class="food-image">
+    <img
+      src="https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&w=900"
+      alt="Colourful fruit drink"
+      loading="lazy"
+      onerror="this.onerror=null;this.src='https://placehold.co/900x600/211c16/c69a5b?text=Fruit+Drinks';">
+  </div>
+  <div class="food-info">
+    <span class="category-label">Drinks</span>
+    <h3>Fruit Drinks</h3>
+    <p>Colourful drinks to brighten your visit.</p>
+  </div>
+</article>
+
+  </div>
+</section><!-- DRINKS SECTION --><section class="drinks-section" id="drinks">  <div class="section-heading reveal">
+    <div class="eyebrow">Refresh & Unwind</div>
+    <h2>Drinks & Refreshments</h2>
+    <p>Explore refreshing drinks and colourful beverages.</p>
+  </div>  <div class="category-banner drinks-banner reveal">
+    <div>
+      <span class="category-label">The Drinks Experience</span>
+      <h3>Refresh Your Moment.</h3>
+      <p>Good company deserves a refreshing drink.</p>
+    </div>
+  </div>  <div class="food-grid"><article class="food-card reveal">
+  <div class="food-image">
+    <img
+      src="https://images.pexels.com/photos/2109099/pexels-photo-2109099.jpeg?auto=compress&cs=tinysrgb&w=900"
+      alt="Colourful refreshing drinks"
+      loading="lazy"
+      onerror="this.onerror=null;this.src='https://placehold.co/900x600/211c16/c69a5b?text=Refreshing+Drinks';">
+  </div>
+  <div class="food-info">
+    <span class="category-label">Drinks</span>
+    <h3>Refreshing Drinks</h3>
+    <p>Refreshing beverages for every occasion.</p>
+  </div>
+</article>
+
+<article class="food-card reveal">
+  <div class="food-image">
+    <img
+      src="https://images.pexels.com/photos/616836/pexels-photo-616836.jpeg?auto=compress&cs=tinysrgb&w=900"
+      alt="Freshly prepared beverage"
+      loading="lazy"
+      onerror="this.onerror=null;this.src='https://placehold.co/900x600/211c16/c69a5b?text=Fresh+Beverages';">
+  </div>
+  <div class="food-info">
+    <span class="category-label">Drinks</span>
+    <h3>Fresh Beverages</h3>
+    <p>A refreshing addition to your dining experience.</p>
+  </div>
+</article>
+
+<article class="food-card reveal">
+  <div class="food-image">
+    <img
+      src="https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&w=900"
+      alt="Colourful fruit drink"
+      loading="lazy"
+      onerror="this.onerror=null;this.src='https://placehold.co/900x600/211c16/c69a5b?text=Fruit+Drinks';">
+  </div>
+  <div class="food-info">
+    <span class="category-label">Drinks</span>
+    <h3>Fruit Drinks</h3>
+    <p>Colourful drinks to brighten your visit.</p>
+  </div>
+</article>
+
+  </div>
+</section>
+
+<!-- GRILLS SECTION -->
+<section class="grills-section" id="grills">
+  <div class="section-heading reveal">
+    <div class="eyebrow">Made for Food Lovers</div>
+    <h2>The Grills Corner</h2>
+    <p>
+      Explore grill-inspired photography and discover the grilled
+      selections available at KÖYA.
+    </p>
+  </div>
+
+  <div class="category-banner grills-banner reveal">
+    <div>
+      <span class="category-label">The Grill Experience</span>
+      <h3>Fire. Flavour. Satisfaction.</h3>
+      <p>Bring your appetite and enjoy the experience.</p>
+    </div>
+  </div>
+
+  <div class="food-grid">
+
+    <article class="food-card reveal">
+      <div class="food-image">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85" alt="Grilled meat selection">
+      </div>
+      <div class="food-info">
+        <span class="category-label">Grills Inspiration</span>
+        <h3>Grilled Meat</h3>
+        <p>Discover the grill selections available at KÖYA.</p>
+      </div>
+    </article>
+
+    <article class="food-card reveal">
+      <div class="food-image">
+        <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=900&q=85" alt="Barbecue grill selection">
+      </div>
+      <div class="food-info">
+        <span class="category-label">Grills Inspiration</span>
+        <h3>Barbecue Selection</h3>
+        <p>Explore delicious barbecue-inspired options.</p>
+      </div>
+    </article>
+
+    <article class="food-card reveal">
+      <div class="food-image">
+        <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=85" alt="Grilled steak">
+      </div>
+      <div class="food-info">
+        <span class="category-label">Grills Inspiration</span>
+        <h3>Grill Specials</h3>
+        <p>Ask about the available grilled specials.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- FEATURE SECTION -->
+<section class="feature">
+  <div class="feature-image reveal">
+    <img src="https://i.ibb.co/NnpvSdTN/IMG-20261111-WA0040.jpg" alt="KÖYA signature platter">
+  </div>
+
+  <div class="feature-content reveal">
+    <div class="eyebrow">The KÖYA Experience</div>
+    <h2>More Than Just A Meal.</h2>
+    <p>
+      At KÖYA, every visit is an opportunity to enjoy good food,
+      explore refreshing drinks and make memorable moments.
+      Whether you're meeting friends or enjoying a meal,
+      there's a place for you.
+    </p>
+    <a href="https://wa.me/2348060874692" class="btn btn-gold" target="_blank" rel="noopener">
+      Get In Touch ↗
+    </a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-heading reveal">
+    <div class="eyebrow">A Visual Taste</div>
+    <h2>From Our Gallery</h2>
+    <p>A selection of food, drinks and grill-inspired visuals.</p>
+  </div>
+
+  <div class="gallery-grid reveal">
+    <img src="https://i.ibb.co/B5t2qpTg/IMG-20261111-WA0048.jpg" alt="Seafood okra">
+    <img src="https://i.ibb.co/HQ00xkB/IMG-20261111-WA0045.jpg" alt="Poultry platter">
+    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=700&q=85" alt="Refreshing drinks">
+    <img src="https://i.ibb.co/GQP40SFt/IMG-20261111-WA0046.jpg" alt="Carnivore platter">
+    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=85" alt="Grilled food">
+    <img src="https://i.ibb.co/0VWc4m9j/IMG-20261111-WA0039.jpg" alt="Spaghetti Ciopinno">
+    <img src="https://i.ibb.co/v4yw1ZDs/IMG-20261111-WA0044.jpg" alt="Seafood platter">
+    <img src="https://i.ibb.co/NnpvSdTN/IMG-20261111-WA0040.jpg" alt="KÖYA platter">
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="visit" id="visit">
+  <div class="eyebrow">Find Your Way To Us</div>
+  <h2>Come Experience KÖYA.</h2>
+
+  <div class="visit-details">
+    <div>
+      <h3>Our Location</h3>
+      <p>24 Abiodun Street,<br>Somolu, Lagos, Nigeria.</p>
+    </div>
+
+    <div>
+      <h3>Call Us</h3>
+      <p>0806 087 4692</p>
+    </div>
+
+    <div>
+      <h3>Order Online</h3>
+      <p>Place an order through our online ordering page.</p>
+    </div>
+  </div>
+
+  <div class="hero-buttons" style="justify-content:center;">
+    <a href="https://www.google.com/maps/search/?api=1&query=Koya+Lagos+24+Abiodun+Street+Somolu+Lagos" class="btn btn-outline" target="_blank" rel="noopener">Get Directions ↗</a>
+
+    <a href="https://glovoapp.com/ng/en/island-lagos/koya-lagos-los?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action" class="btn btn-gold" target="_blank" rel="noopener">Order Online ↗</a>
+  </div>
+</section>
+
+  </main>  <footer>
+    <div class="footer-main">
+      <div>
+        <a href="#home" class="logo">KÖYA<span>.</span></a>
+        <p>Good food. Great moments.</p>
+      </div>  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#food">Food</a>
+    <a href="#drinks">Drinks</a>
+    <a href="#grills">Grills</a>
+    <a href="#visit">Contact</a>
+  </div>
+</div>
+
+<div class="copyright">
+  © <span id="year"></span> KÖYA LAGOS. ALL RIGHTS RESERVED.
+</div>
+
+  </footer>  <a class="whatsapp" href="https://wa.me/2348060874692" target="_blank" rel="noopener" aria-label="Chat with KÖYA on WhatsApp">
+    WhatsApp ↗
+  </a>  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navigation = document.getElementById("navigation");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    // Close mobile menu after selecting a link
+    document.querySelectorAll("#navigation a").forEach(link => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Reveal sections while scrolling
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      revealObserver.observe(element);
+    });
+
+    // Automatic copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script></body>
+</html>
